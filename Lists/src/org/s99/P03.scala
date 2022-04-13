@@ -3,7 +3,7 @@ package org.s99
 import scala.annotation.tailrec
 
 /*
-  P03 Find the Kth element of a list.
+  P03(*) Find the Kth element of a list.
   By convention, the first element in the list is element 0.
   Example:
 
@@ -12,10 +12,10 @@ import scala.annotation.tailrec
  */
 object P03 {
 
-  def nth(n: Int, li: List[Any]): Any = {
-    li.take(n + 1).last
-  }
+  // my version with built-ins
+  def nth[T](n: Int, li: List[T]): T = li.take(n + 1).last
 
+  // scala99 version without built-ins
   @tailrec
   def fancyNth[A](list: List[A], n: Int): A = (n, list) match {
     case (0, h :: _) => h

@@ -1,6 +1,4 @@
-package org.lists
-
-import scala.annotation.tailrec
+package org.s99
 
 /*
 (*) Remove the Kth element from a list.
@@ -33,7 +31,7 @@ object P20 {
       case (_, Nil) => throw new NoSuchElementException
       case (0, h :: tail) => (tail, h)
       case (_, h :: tail) => {
-        val (t, e) = removeRec(k-1, list.tail)
+        val (t, e) = removeRec(k - 1, list.tail)
         (list.head :: t, e)
       }
     }

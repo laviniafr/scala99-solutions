@@ -1,6 +1,6 @@
-package org.lists
+package org.s99
 
-import P23._
+import org.s99.P23.randomSelect3
 
 import scala.reflect.ClassTag
 import scala.util.Random
@@ -29,7 +29,7 @@ object P25 {
     val array = list.toArray
     for (i <- array.length - 1 to 1 by -1) { // from n-1 to 1
       val j = random.nextInt(i + 1) // j will store random index in the current range of i elements
-      val t = array(i)  // t stores the tail value, i.e. the last element in the current list of i elements
+      val t = array(i) // t stores the tail value, i.e. the last element in the current list of i elements
       array.update(i, array(j)) // tail receives the element at random index
       array.update(j, t) // random index receives the tail
     }

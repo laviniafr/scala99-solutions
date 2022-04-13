@@ -1,7 +1,8 @@
-package org.lists
+package org.s99
+
+import org.s99.P23.randomSelect3
 
 import scala.util.Random
-import P23._
 
 /*
 (*) Lotto: Draw N different random numbers from the set 1..M.
@@ -23,17 +24,18 @@ object P24 {
 
     lottoR(n, m, new Random())
   }
+
   // my second version, using P23 so the numbers won't repeat
   // coincidentally same as scala99, although mine handles an extra edge case
   def lotto2(n: Int, m: Int): List[Int] = {
-    if (m<=0) throw new IndexOutOfBoundsException
+    if (m <= 0) throw new IndexOutOfBoundsException
     else {
-      randomSelect3(n, List.range(1,m+1))
+      randomSelect3(n, List.range(1, m + 1))
     }
   }
 
 
   def main(args: Array[String]): Unit = {
-    println(lotto2(6,49))
+    println(lotto2(6, 49))
   }
 }

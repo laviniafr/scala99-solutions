@@ -1,6 +1,4 @@
-package org.lists
-
-import scala.annotation.tailrec
+package org.s99
 
 /*
 P16 (**) Drop every Nth element from a list. Example:
@@ -17,12 +15,13 @@ object P16 {
   if (list.isEmpty) Nil
   else {
     list.zipWithIndex.collect {
-      case (e,i) if (i+1)%n !=0 => e
+      case (e, i) if (i + 1) % n != 0 => e
     }
   }
+
   def main(args: Array[String]): Unit = {
-    val list = List('a','b','c','d','e','f','g','h','i','j','k')
-//    println(list.indexOf(2))
+    val list = List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k')
+    //    println(list.indexOf(2))
     println(dropN(list, 3))
   }
 

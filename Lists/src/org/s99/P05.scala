@@ -1,4 +1,4 @@
-package org.lists
+package org.s99
 
 import scala.annotation.tailrec
 
@@ -20,14 +20,14 @@ object P05 {
 
   @tailrec
   def isPal[T](list: List[T]): Boolean = list match {
-    case h::Nil => true
-    case h::t if h==t.last => isPal(list.slice(1,list.length-1))
+    case h :: Nil => true
+    case h :: t if h == t.last => isPal(list.slice(1, list.length - 1))
     case _ => false
   }
 
   def main(args: Array[String]): Unit = {
     var list = List(1, 2, 3, 2, 1)
-//    println(isPalindrome(list))
-   println(isPal(list))
+    //    println(isPalindrome(list))
+    println(isPal(list))
   }
 }

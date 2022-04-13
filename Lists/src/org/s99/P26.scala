@@ -1,6 +1,4 @@
-package org.lists
-
-import scala.reflect.ClassTag
+package org.s99
 
 /*
 (**) Generate the combinations of K distinct objects chosen from the N elements of a list.
@@ -36,9 +34,8 @@ object P26 {
     }
 
 
-
   def main(args: Array[String]): Unit = {
     val list = List('a', 'b', 'c', 'd', 'e', 'f')
-    println(combs(3,list))
+    println(combs(3, list))
   }
 }

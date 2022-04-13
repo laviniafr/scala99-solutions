@@ -1,4 +1,4 @@
-package org.lists
+package org.s99
 
 /*
   P05 (*) Reverse a list.
@@ -9,8 +9,8 @@ package org.lists
 object P06 {
   // my version
   def rev[T](list: List[T]): List[T] = list match {
-    case h::Nil => List(h)
-    case h::t => t.last::rev(list.take(list.length-1))
+    case h :: Nil => List(h)
+    case h :: t => t.last :: rev(list.take(list.length - 1))
   }
   // o(n2) version from scala99
 
@@ -21,7 +21,7 @@ object P06 {
 
   def main(args: Array[String]): Unit = {
     val list = List(1, 1, 2, 3, 5, 8)
-//    println(list.reverse)
+    //    println(list.reverse)
     println(rev(list))
     println(revRecursive(list))
   }

@@ -1,4 +1,4 @@
-package org.lists
+package org.s99
 
 /*
   P12 (**) Decode a run-length encoded list.

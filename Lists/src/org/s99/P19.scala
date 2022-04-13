@@ -1,4 +1,4 @@
-package org.lists
+package org.s99
 
 import scala.annotation.tailrec
 
@@ -13,11 +13,11 @@ object P19 {
 
   //my attempt
   @tailrec
-  def rotate[T](n: Int, list: List[T]): List[T] =(n, list) match {
+  def rotate[T](n: Int, list: List[T]): List[T] = (n, list) match {
     case (_, Nil) => Nil
     case (0, list) => list
-    case (n, list) if n < 0 => rotate(n+1, list.reverse.head :: list.reverse.tail.reverse)
-    case (n, h :: tail) if n > 0 => rotate(n-1,(h::tail.reverse).reverse)
+    case (n, list) if n < 0 => rotate(n + 1, list.reverse.head :: list.reverse.tail.reverse)
+    case (n, h :: tail) if n > 0 => rotate(n - 1, (h :: tail.reverse).reverse)
   }
 
   //scala99
@@ -29,7 +29,7 @@ object P19 {
 
   def main(args: Array[String]): Unit = {
     val list = List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k')
-    println(rotate(-4,list))
+    println(rotate(-4, list))
   }
 
 }

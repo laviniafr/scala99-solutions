@@ -1,4 +1,4 @@
-package org.lists
+package org.s99
 
 /*
 P08 (**) Eliminate consecutive duplicates of list elements.
@@ -12,8 +12,8 @@ object P08 {
 
   def eliminate[T](list: List[T]): List[T] = list match {
     case Nil => Nil
-    case h::tail => h :: eliminate(tail.dropWhile(_ == h))
-//    case h::tail => h::tail
+    case h :: tail => h :: eliminate(tail.dropWhile(_ == h))
+    //    case h::tail => h::tail
   }
 
   def main(args: Array[String]): Unit = {

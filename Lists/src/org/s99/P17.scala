@@ -1,4 +1,4 @@
-package org.lists
+package org.s99
 
 /*
 P17 (*) Split a list into two parts.
@@ -10,23 +10,23 @@ Example:
 object P17 {
 
   //easy built in way
-  def splitEasy[T](n: Int,list: List[T]): (List[T], List[T]) =
+  def splitEasy[T](n: Int, list: List[T]): (List[T], List[T]) =
     list.splitAt(n)
 
   //scala99 way
-  def splitRecursive[T](n:Int, list: List[T]): (List[T], List[T]) = (n, list) match {
+  def splitRecursive[T](n: Int, list: List[T]): (List[T], List[T]) = (n, list) match {
     case (_, Nil) => (Nil, Nil)
     case (0, list) => (Nil, list)
-    case (n, h::tail) => {
-      val (pre, post) = splitRecursive(n-1, tail)
-      (h::pre, post)
+    case (n, h :: tail) => {
+      val (pre, post) = splitRecursive(n - 1, tail)
+      (h :: pre, post)
     }
   }
 
   def main(args: Array[String]): Unit = {
-    val list = List('a','b','c','d','e','f','g','h','i','j','k')
-    println(splitEasy(3,list))
-    println(splitRecursive(3,list))
+    val list = List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k')
+    println(splitEasy(3, list))
+    println(splitRecursive(3, list))
   }
 
 }

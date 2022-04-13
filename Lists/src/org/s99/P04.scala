@@ -1,4 +1,4 @@
-package org.lists
+package org.s99
 
 /*
   P04 Find the number of elements of a list.
@@ -14,7 +14,7 @@ object P04 {
   }
 
   def main(args: Array[String]): Unit = {
-    val list = List(1,1,2,3,5,8)
+    val list = List(1, 1, 2, 3, 5, 8)
     // built-in
     println(list.length)
     // using own function

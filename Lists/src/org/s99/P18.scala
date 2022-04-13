@@ -1,6 +1,4 @@
-package org.lists
-
-import scala.annotation.tailrec
+package org.s99
 
 /*
 P18 (**) Extract a slice from a list.

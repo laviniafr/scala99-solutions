@@ -1,4 +1,4 @@
-package org.lists
+package org.s99
 
 /*
 P14 (*) Duplicate the elements of a list. Example:
@@ -15,8 +15,8 @@ object P14 {
 
   //my version using flatmap
   def duplicate2[T](list: List[T]): List[T] =
-    if(list.isEmpty) Nil
-    else list.flatMap(e => List.fill(4)(e) )
+    if (list.isEmpty) Nil
+    else list.flatMap(e => List.fill(4)(e))
 
   def main(args: Array[String]): Unit = {
     val list = List('a', 'b', 'c', 'd')

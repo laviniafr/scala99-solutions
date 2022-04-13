@@ -1,4 +1,4 @@
-package org.lists
+package org.s99
 
 /*
   P07 (**) Flatten a nested list structure.
@@ -8,7 +8,7 @@ package org.lists
  */
 object P07 {
 
-  def flatten(list: List[Any]):List[Any] = list flatMap {
+  def flatten(list: List[Any]): List[Any] = list flatMap {
     case li: List[_] => flatten(li)
     case e => List(e)
   }

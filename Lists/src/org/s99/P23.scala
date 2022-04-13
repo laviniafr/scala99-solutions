@@ -1,6 +1,7 @@
-package org.lists
+package org.s99
 
-import P20._
+import org.s99.P20.removeAt
+
 import scala.util.Random
 
 /*
@@ -38,6 +39,7 @@ object P23 {
         val (ls, num) = removeAt(r.nextInt(list.length), list)
         num :: randomSelectR(n - 1, ls, r)
       }
+
     randomSelectR(n, list, new Random)
   }
 

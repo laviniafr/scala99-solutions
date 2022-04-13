@@ -1,4 +1,4 @@
-package org.lists
+package org.s99
 
 import scala.annotation.tailrec
 
@@ -12,18 +12,19 @@ import scala.annotation.tailrec
  */
 object P03 {
 
-  def nth(n: Int, li: List[Any]): Any ={
-    li.take(n+1).last
+  def nth(n: Int, li: List[Any]): Any = {
+    li.take(n + 1).last
   }
 
   @tailrec
-  def fancyNth[A](list: List[A], n: Int): A = (n,list) match {
-    case (0, h :: _ ) => h
-    case (n, _ :: tail) => fancyNth(tail, n-1)
+  def fancyNth[A](list: List[A], n: Int): A = (n, list) match {
+    case (0, h :: _) => h
+    case (n, _ :: tail) => fancyNth(tail, n - 1)
     case (_, Nil) => throw new NoSuchElementException
   }
+
   def main(args: Array[String]): Unit = {
-//    println(nth(2, List(1, 1, 2, 3, 5, 8)))
-   println( fancyNth(List(1, 1, 2, 3, 5, 8),5 ))
+    //    println(nth(2, List(1, 1, 2, 3, 5, 8)))
+    println(fancyNth(List(1, 1, 2, 3, 5, 8), 5))
   }
 }

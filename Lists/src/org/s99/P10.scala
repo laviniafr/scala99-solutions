@@ -1,6 +1,6 @@
-package org.lists
+package org.s99
 
-import P09.pack
+import org.s99.P09.pack
 
 /*
 P10 (*) Run-length encoding of a list.
@@ -13,18 +13,18 @@ object P10 {
 
   // assume packed list according to P09
   // my version
-  def encode[T](list: List[List[T]]): List[(Int,T)] = list match {
+  def encode[T](list: List[List[T]]): List[(Int, T)] = list match {
     case Nil => Nil
-    case h :: tail => (h.length,h.head) :: encode(tail)
+    case h :: tail => (h.length, h.head) :: encode(tail)
   }
 
   //version from scala99
-  def encode99[T](list: List[T]):List[(Int, T)] =
-    pack(list) map { e => (e.length, e.head)}
+  def encode99[T](list: List[T]): List[(Int, T)] =
+    pack(list) map { e => (e.length, e.head) }
 
 
   def main(args: Array[String]): Unit = {
-    val list = List('a', 'a', 'a', 'a', 'b', 'c', 'c','c', 'a', 'a', 'd', 'e', 'e', 'e', 'e')
+    val list = List('a', 'a', 'a', 'a', 'b', 'c', 'c', 'c', 'a', 'a', 'd', 'e', 'e', 'e', 'e')
     println(encode(pack(list)))
 
   }

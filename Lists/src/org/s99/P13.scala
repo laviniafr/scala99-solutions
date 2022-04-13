@@ -1,4 +1,4 @@
-package org.lists
+package org.s99
 
 /*
 
@@ -13,20 +13,22 @@ object P13 {
   //my attempt
   def encode[T](list: List[T]): List[(Int, T)] = list match {
     case Nil => Nil
-    case h :: tail => ((h::tail.takeWhile(h==_)).length, h) :: encode(tail.dropWhile(h==_))
+    case h :: tail => ((h :: tail.takeWhile(h == _)).length, h) :: encode(tail.dropWhile(h == _))
   }
 
   //scala99 version
 
-  def encodeDirect[T](list: List[T]): List[(Int,T)] =
-    if(list.isEmpty) Nil
+  def encodeDirect[T](list: List[T]): List[(Int, T)] =
+    if (list.isEmpty) Nil
     else {
-      val (packed, next) = list.span {_==list.head}
+      val (packed, next) = list.span {
+        _ == list.head
+      }
       (packed.length, packed.head) :: encodeDirect(next)
     }
 
   def main(args: Array[String]): Unit = {
-    val list = List('a', 'a', 'a', 'a', 'b', 'c', 'c','c', 'a', 'a', 'd', 'e', 'e', 'e', 'e')
+    val list = List('a', 'a', 'a', 'a', 'b', 'c', 'c', 'c', 'a', 'a', 'd', 'e', 'e', 'e', 'e')
     println(encode(list))
 
     println(encodeDirect(list))

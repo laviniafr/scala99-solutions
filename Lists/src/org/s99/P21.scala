@@ -1,4 +1,4 @@
-package org.lists
+package org.s99
 
 /*
 (*) Insert an element at a given position into a list. Example:
@@ -20,7 +20,6 @@ object P21 {
     case (Nil, _) if k < 0 => throw new NoSuchElementException
     case (pre, post) => pre ::: (e :: post)
   }
-
 
 
   def main(args: Array[String]): Unit = {

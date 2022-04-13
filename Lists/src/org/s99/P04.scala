@@ -8,6 +8,7 @@ package org.s99
  */
 object P04 {
 
+  //my version with pattern matching
   def findLength[T](list: List[T]): Int = list match {
     case Nil => 0
     case _ :: tail => 1 + findLength(tail)
@@ -17,6 +18,7 @@ object P04 {
     val list = List(1, 1, 2, 3, 5, 8)
     // built-in
     println(list.length)
+
     // using own function
     println(findLength(list))
   }

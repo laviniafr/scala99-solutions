@@ -28,7 +28,6 @@ object P11 {
   }
 
   //a fun version from scala99 - more typesafe
-
   def encodeFun[T](list: List[T]): List[Either[T, (Int, T)]] =
     encode99(list) map { t => if (t._1 == 1) Left(t._2) else Right(t) }
 

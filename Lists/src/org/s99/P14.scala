@@ -13,10 +13,13 @@ object P14 {
     case Nil => Nil
   }
 
-  //my version using flatmap
+  //my version using flatmap, similar to scala99
   def duplicate2[T](list: List[T]): List[T] =
     if (list.isEmpty) Nil
-    else list.flatMap(e => List.fill(4)(e))
+    else list.flatMap(e => List.fill(2)(e))
+
+  //scala99 version
+  def duplicate3[T](list: List[T]): List[T] = list flatMap(e => List(e,e))
 
   def main(args: Array[String]): Unit = {
     val list = List('a', 'b', 'c', 'd')

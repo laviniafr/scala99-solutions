@@ -16,11 +16,12 @@ object P21 {
     }
 
   // second attempt similar to scala99 p20
+  // scala99 version of p21 is similar to this
   def insertAt2[T](e: T, k: Int, list: List[T]): List[T] = list.splitAt(k) match {
     case (Nil, _) if k < 0 => throw new NoSuchElementException
     case (pre, post) => pre ::: (e :: post)
   }
-
+  
 
   def main(args: Array[String]): Unit = {
     val list = List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k')

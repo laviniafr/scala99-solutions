@@ -17,7 +17,6 @@ object P13 {
   }
 
   //scala99 version
-
   def encodeDirect[T](list: List[T]): List[(Int, T)] =
     if (list.isEmpty) Nil
     else {

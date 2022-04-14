@@ -21,7 +21,7 @@ object P21 {
     case (Nil, _) if k < 0 => throw new NoSuchElementException
     case (pre, post) => pre ::: (e :: post)
   }
-  
+
 
   def main(args: Array[String]): Unit = {
     val list = List('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k')

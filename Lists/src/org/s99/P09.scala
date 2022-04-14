@@ -9,12 +9,21 @@ Example:
  */
 object P09 {
 
-  // recursive
+  // my version
   def pack[T](list: List[T]): List[List[T]] = list match {
     case Nil => Nil
     case h :: tail => List.from(h :: tail.takeWhile(_ == h)) :: pack(tail.dropWhile(_ == h))
   }
 
+  //scala99 version, using span
+  def pack1[T](list: List[T]): List[List[T]] = {
+    if (list.isEmpty) List(List())
+    else {
+      val (packed, next) = list span {_ == list.head}
+      if(next==Nil) List(packed)
+      else packed :: pack(next)
+    }
+  }
 
   def main(args: Array[String]): Unit = {
     val list = List('a', 'a', 'a', 'a', 'b', 'c', 'c', 'c', 'a', 'a', 'd', 'e', 'e', 'e', 'e')

@@ -9,7 +9,7 @@ Example:
  */
 object P20 {
 
-  // my version 1
+  // my version
   def removeAt[T](k: Int, list: List[T]): (List[T], T) =
     (list.take(k) ::: list.drop(k + 1), list.drop(k).head)
 

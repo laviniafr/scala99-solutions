@@ -31,7 +31,7 @@ object P23 {
     }
   }
 
-  // scala99: it can be expensive to create a new random instance each time, so only do it once
+  // scala99 version: it can be expensive to create a new random instance each time, so only do it once
   def randomSelect3[T](n: Int, list: List[T]): List[T] = {
     def randomSelectR(n: Int, list: List[T], r: Random): List[T] =
       if (n <= 0) Nil

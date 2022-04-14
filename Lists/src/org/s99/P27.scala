@@ -23,7 +23,6 @@ object P27 {
 
 
   // my solution for b. using my solution for a
-
   def group[String](sizes: List[Int], list: List[String]): List[List[List[String]]] = {
     val (a :: b :: c) = sizes
     val g2 = combs(a, list)

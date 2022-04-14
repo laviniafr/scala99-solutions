@@ -21,12 +21,11 @@ object P24 {
         r.nextInt(m) :: lottoR(n - 1, m, r)
       }
     }
-
     lottoR(n, m, new Random())
   }
 
   // my second version, using P23 so the numbers won't repeat
-  // coincidentally same as scala99, although mine handles an extra edge case
+  // scala99 version is similar to this
   def lotto2(n: Int, m: Int): List[Int] = {
     if (m <= 0) throw new IndexOutOfBoundsException
     else {

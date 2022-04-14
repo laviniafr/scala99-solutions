@@ -17,7 +17,7 @@ object P26 {
   def combs[T](k: Int, list: List[T]): List[List[T]] =
     list.toSet[T].subsets(k).map(_.toList).toList
 
-  // using the scala99 solution
+  // the scala99 solution
   // helper method: similar to flatMap, but passes successive sublists instead of each element
   def flatMapSublists[A, B](list: List[A])(f: (List[A]) => List[B]): List[B] =
     list match {

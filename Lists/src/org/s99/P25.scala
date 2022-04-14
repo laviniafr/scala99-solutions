@@ -14,7 +14,8 @@ import scala.util.Random
  */
 object P25 {
 
-  // my attempt, using P23 - same as scala99, but with extra empty list edge case
+  // my attempt, using P23
+  // scala99 is similar to this
   def randomPermute[T](list: List[T]): List[T] =
     if (list.isEmpty) Nil
     else {
@@ -22,8 +23,8 @@ object P25 {
     }
 
 
-  // the scala99 solution
-  // using Fisher-Yates shuffle (efficient way of  Durstenfeld) , requires a mutable array
+  // the other scala99 solution
+  // using Fisher-Yates shuffle (efficient way of  Durstenfeld), requires a mutable array
   def randomPermute2[T: ClassTag](list: List[T]): List[T] = {
     val random = new Random()
     val array = list.toArray

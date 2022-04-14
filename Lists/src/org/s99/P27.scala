@@ -45,6 +45,7 @@ object P27 {
 
   def main(args: Array[String]): Unit = {
     val list = List("Aldo", "Beat", "Carla", "David", "Evi", "Flip", "Gary", "Hugo", "Ida")
+
     println(group3(list).length)
     //    println(group399(list).length)
     println(group(List(2, 3, 4), list).length)

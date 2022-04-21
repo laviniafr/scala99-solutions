@@ -4,6 +4,7 @@ package org.s99.arithmetics
   Includes P40 and P41.
  */
 import Primes._
+import org.s99.lists.P26.combinations
 
 import scala.language.implicitConversions
 

@@ -62,6 +62,11 @@ object P46 {
     case _ => false
   }
 
+  def not(a: Boolean): Boolean = a match {
+    case true => false
+    case false => true
+  }
+
   /*
     Now, write a function called table2 which prints the truth table of a given logical expression in two variables.
 

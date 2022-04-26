@@ -1,5 +1,7 @@
 package org.s99.binarytrees
 
+import org.s99.arithmetics.Timer
+
 sealed abstract class Tree[+T]
 
 case class Node[+T](value: T, left: Tree[T], right: Tree[T]) extends Tree[T] {
@@ -46,11 +48,33 @@ object Tree {
     }
   }
 
-  // TO DO: Think of a different, more efficient, way to handle the problem
+  // Scala 99 version
+  // clever use of flatmap, which solves my issue above with pairs getting generated twice
+
+  def tBalanced[T](n: Int, value: T): List[Tree[T]] = n match {
+    case n if n < 1 => List(End)
+    case n if n % 2 == 1 => {
+      val subtrees = tBalanced(n / 2, value)
+      subtrees.flatMap(l => subtrees.map(r => Node(value, l, r)))
+    }
+    case n if n % 2 ==0 => {
+      val lesserSubtrees = tBalanced((n-1)/2, value)
+      val greaterSubtrees = tBalanced((n-1)/2 +1, value)
+      lesserSubtrees.flatMap(l => greaterSubtrees.flatMap(g => List(Node(value, l, g), Node(value, g, l))))
+    }
+  }
 
 
   def main(args: Array[String]): Unit = {
-    println(cBalanced(4, "x"))
+//    println(cBalanced(4, "x"))
+    println("Elapsed time of my solution: ")
+    println(Timer.timeFunction(cBalanced(4, "x")))
+
+//    println(tBalanced(4, "x"))
+    println("Elapsed time of scala99 solution: ")
+    println(Timer.timeFunction(tBalanced(4, "x")))
+
+// conclusion: my version is significantly slower than the scala99 solution, as expected cause of the trees getting generated multiple times
   }
 
 }

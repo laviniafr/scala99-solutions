@@ -25,8 +25,15 @@ object P56 {
   }
 
   def main(args: Array[String]): Unit = {
-    val tree = Node('a', Node('b'), Node('c'))
-    println(isMirrorOf(Node('a', End, Node('c', Node('a'), End)), Node('a', End, Node('c', Node('a'), End))))
+    val tree1 = Node('a', Node('b'), Node('c'))
+    val tree2 = Node('a', End, Node('c', Node('a'), End))
+    val tree3 = Node("x", Node("x", Node("x", End, End), Node("x", End, End)), Node("x", Node("x", End, End), Node("x", End, End)))
+
+//    println(isMirrorOf(Node('a', End, Node('c', Node('a'), End)), Node('a', End, Node('c', Node('a'), End))))
+
+    println(isSymmetric(tree1))
+    println(isSymmetric(tree2))
+    println(isSymmetric(tree3))
   }
 
 }

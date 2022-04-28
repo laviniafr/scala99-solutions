@@ -12,7 +12,7 @@ Some of my versions aren't exactly elegant - tidying up is left as an exercise f
 - [x] **Arithmetics** P31 - P41
 
 
-- [ ] **Logic and Codes** P46 - P50
+- [x] **Logic and Codes** P46 - P50
 
 
 - [ ] **Binary Trees** P54 - P69
